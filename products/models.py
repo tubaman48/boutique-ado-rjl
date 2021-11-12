@@ -6,8 +6,9 @@ from django.db import models
 class Category(models.Model):
     """ Category class """
     class Meta:
+        """ Meta data override """
         verbose_name_plural = 'Categories'
-        
+
     name = models.CharField(
         max_length=254)
     friendly_name = models.CharField(
@@ -17,6 +18,7 @@ class Category(models.Model):
         return self.name
 
     def get_friendly_name(self):
+        """ Show friendly_name """
         return self.friendly_name
 
 
